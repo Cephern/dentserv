@@ -1,33 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap");
 
 :root {
-    --sidebar-main-color: #313640;
-    --sidebar-main-text-color: #fff;
-    --sidebar-dimmed-text-color: #898b8f;
-    --sidebar-btn-color: #51555d;
+  --sidebar-main-color: #313640;
+  --sidebar-main-text-color: #fff;
+  --sidebar-dimmed-text-color: #898b8f;
+  --sidebar-btn-color: #51555d;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Rubik', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
 }
 
 .App {
-    width: calc(100vw - 20px);
-    height: 100vh;
-    display: flex;
-}
-
-.Sidebar {
-    width: 340px;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
+  width: calc(100vw - 20px);
+  height: 100vh;
+  display: flex;
+  position: relative;
 }
 
 main {
-    height: 200vh;
-    margin-left: 340px;
+  height: 200vh;
+  margin-left: 340px;
 }

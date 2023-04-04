@@ -1,4 +1,12 @@
 .Sidebar {
+  width: 340px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.Sidebar .wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -89,6 +97,11 @@
   line-height: 1.2;
 }
 
+.Sidebar nav ul li p.active {
+  background-color: #222;
+  color: #fff;
+}
+
 .Sidebar nav ul li:nth-child(1) {
   border-top: 1px solid #fff;
 }
@@ -102,9 +115,22 @@
   color: #fff;
 }
 
-.Sidebar .sidenav {
-  visibility: hidden;
-  position: absolute;
+.Sidebar nav ul .services p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Sidebar nav ul .services span {
+  height: 100%;
+  font-size: 20px;
+  font-weight: 500;
+  transition: 0.4s;
+  color: darkorange;
+}
+
+.Sidebar nav ul .services p.active span {
+  transform: rotateZ(45deg);
 }
 /* --nav-- */
 

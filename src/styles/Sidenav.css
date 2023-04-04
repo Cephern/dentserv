@@ -1,0 +1,45 @@
+.Sidebar .sidenav {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 340px;
+  height: 100%;
+  opacity: 0;
+  transition: 0.4s ease-in;
+  z-index: -1;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sidenav.active {
+  visibility: visible;
+  opacity: 1;
+  margin-left: 340px;
+  color: #000;
+  background-color: #eee;
+}
+
+.sidenav h3 {
+  font-size: 32px;
+  margin: 20px;
+}
+
+.sidenav li {
+  padding: 20px;
+  font-size: 20px;
+  border-bottom: 1px solid #ccc;
+  color: #696f7c;
+}
+
+.sidenav li:last-child {
+  border-bottom: 1px solid #ccc !important;
+}
+
+.sidenav li:hover {
+  background-color: #fff;
+  color: #111;
+  cursor: pointer;
+}
