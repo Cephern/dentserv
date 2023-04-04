@@ -6,6 +6,8 @@ function App() {
     <div className="App">
       <Sidebar />
 
+      <div className="test"></div>
+
       <main>
         <Home />
       </main>
