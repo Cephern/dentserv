@@ -1,45 +1,75 @@
-import "../styles/Sidebar.css";
+import styles from "../styles/MainNav.module.css";
+
 import MainLogo from "../assets/logos/main.png";
 import PromoLogo from "../assets/logos/promo.png";
 import ServicesSidenav from "./ServicesSidenav";
-import { useState } from "react";
+import AboutSidenav from "./AboutSidenav";
+import { useEffect, useState } from "react";
 
-const Sidebar = () => {
-  const [activeStatus, setActiveStatus] = useState({
-    services: false,
-    about: false,
-  });
+const defaultStatus = {
+  services: {
+    name: "services",
+    active: false,
+  },
+  about: {
+    name: "about",
+    active: false,
+  },
+};
+
+const Sidebar = ({ toggleDimmer }) => {
+  const [activeStatus, setActiveStatus] = useState(defaultStatus);
+  const [isFirstToggle, setIsFirstToggle] = useState(true);
 
   const toggleActive = (e) => {
+    if (isFirstToggle) {
+      toggleDimmer();
+      setIsFirstToggle(false);
+    }
+
     const menuToToggle = e.target.getAttribute("data-name");
+
     setActiveStatus((prev) => ({
-      ...prev,
-      [menuToToggle]: !prev[menuToToggle],
+      ...defaultStatus,
+      [menuToToggle]: {
+        ...prev[menuToToggle],
+        active: !prev[menuToToggle].active,
+      },
     }));
-    console.log(activeStatus);
   };
 
+  useEffect(() => {
+    if (
+      Object.values(activeStatus)
+        .map((obj) => obj.active)
+        .every((value) => value === false)
+    ) {
+      toggleDimmer();
+      setIsFirstToggle(true);
+    }
+  }, [activeStatus]);
+
   return (
-    <div className="Sidebar">
-      <div className="wrapper">
-        <div className="logo">
+    <div className={styles.Sidebar}>
+      <div className={styles.wrapper}>
+        <div className={styles.logo}>
           <img src={MainLogo} alt="Logo" />
-          <div className="logo_text">
+          <div className={styles.logoText}>
             <p>Доктор Ливси</p>
-            <p className="dim">Центр приватной стоматологии</p>
+            <p className={styles.dim}>Центр приватной стоматологии</p>
           </div>
         </div>
 
-        <div className="contacts">
+        <div className={styles.contacts}>
           <p>+7 (999) 012-34-56</p>
           <button>Записаться на приём</button>
         </div>
 
         <nav>
-          <ul className="main_ul">
-            <li className="services">
+          <ul className={styles.mainUl}>
+            <li className={styles.services}>
               <p
-                className={activeStatus.services ? "active" : ""}
+                className={activeStatus.services.active ? styles.active : ""}
                 data-name={"services"}
                 onClick={(e) => toggleActive(e)}
               >
@@ -47,24 +77,18 @@ const Sidebar = () => {
                 <span>+</span>
               </p>
 
-              <ServicesSidenav isActive={activeStatus.services} />
+              <ServicesSidenav isActive={activeStatus.services.active} />
             </li>
-            <li className="about">
-              <p>О Центре</p>
-              <ul className="sidenav">
-                <li>Принципы работы</li>
-                <li>Пресса о нас</li>
-                <li>№1 в рейтинге КоммерсантЪ</li>
-                <li>Зуботехническая лаборатория</li>
-                <li>Безопасность лечения зубов</li>
-                <li>Преимущества нашего Центра</li>
-                <li>Неудобства нашего Центра</li>
-                <li>Правила обслуживания</li>
-                <li>Направления деятельности</li>
-                <li>Независимые консультации</li>
-                <li>Взаимодействие с другими клиниками</li>
-                <li>Вакансии</li>
-              </ul>
+            <li className={styles.about}>
+              <p
+                className={activeStatus.about.active ? styles.active : ""}
+                data-name={"about"}
+                onClick={(e) => toggleActive(e)}
+              >
+                О Центре
+                <span>+</span>
+              </p>
+              <AboutSidenav isActive={activeStatus.about.active} />
             </li>
 
             <li>
@@ -88,27 +112,27 @@ const Sidebar = () => {
           </ul>
         </nav>
 
-        <div className="promo">
-          <div className="promo_inner_text">
+        <div className={styles.promo}>
+          <div>
             <p>Лечение зубов во сне</p>
             <p>Все зубы сразу за 1 визит</p>
           </div>
           <img src={PromoLogo} alt="Promo Logo" />
         </div>
 
-        <div className="schedule">
+        <div className={styles.schedule}>
           <p>График работы</p>
           <div>
-            <span className="days">Пн - Пт:</span>{" "}
-            <span className="time">10:00 - 20:00</span>
+            <span className={styles.days}>Пн - Пт:</span>{" "}
+            <span className={styles.time}>10:00 - 20:00</span>
           </div>
           <div>
-            <span className="days">Сб - Вс:</span>{" "}
-            <span className="time">10:00 - 19:00</span>
+            <span className={styles.days}>Сб - Вс:</span>{" "}
+            <span className={styles.time}>10:00 - 19:00</span>
           </div>
         </div>
 
-        <div className="social">
+        <div className={styles.social}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
             <path d="M31.4907 63.4907C0 94.9813 0 145.671 0 247.04V264.96C0 366.329 0 417.019 31.4907 448.509C62.9813 480 113.671 480 215.04 480H232.96C334.329 480 385.019 480 416.509 448.509C448 417.019 448 366.329 448 264.96V247.04C448 145.671 448 94.9813 416.509 63.4907C385.019 32 334.329 32 232.96 32H215.04C113.671 32 62.9813 32 31.4907 63.4907ZM75.6 168.267H126.747C128.427 253.76 166.133 289.973 196 297.44V168.267H244.16V242C273.653 238.827 304.64 205.227 315.093 168.267H363.253C359.313 187.435 351.46 205.583 340.186 221.579C328.913 237.574 314.461 251.071 297.733 261.227C316.41 270.499 332.907 283.63 346.132 299.751C359.357 315.873 369.01 334.618 374.453 354.747H321.44C316.555 337.262 306.614 321.61 292.865 309.754C279.117 297.899 262.173 290.368 244.16 288.107V354.747H238.373C136.267 354.747 78.0267 284.747 75.6 168.267Z" />
           </svg>
@@ -123,7 +147,7 @@ const Sidebar = () => {
           </svg>
         </div>
 
-        <div className="interact">
+        <div className={styles.interact}>
           <button>Контакты и запись на приём</button>
           <button>Служба контроля качества</button>
         </div>

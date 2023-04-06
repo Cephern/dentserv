@@ -1,10 +1,34 @@
-import "../styles/Sidenav.css";
+import { useState } from "react";
+import styles from "../styles/SecondaryNav.module.css";
+import ImplantSidenav from "./ImplantSidenav";
+
+const defaultSidenavStatus = {
+  implant: true,
+};
 
 function ServicesSidenav({ isActive }) {
+  const [sidenavActiveStatus, setSidenavActiveStatus] =
+    useState(defaultSidenavStatus);
+
+  const toggleSidenavStatus = (e) => {
+    const sidenavToToggle = e.target.getAttribute("data-name");
+    setSidenavActiveStatus((prev) => ({
+      ...defaultSidenavStatus,
+      [sidenavToToggle]: !sidenavActiveStatus[sidenavToToggle],
+    }));
+  };
+
   return (
-    <ul className={`sidenav${isActive ? " active" : ""}`}>
+    <ul className={`${styles.sidenav} ${isActive ? styles.active : ""}`}>
       <h3>Услуги</h3>
-      <li>Имплантация</li>
+      <li
+        className={sidenavActiveStatus.implant ? styles.secondaryActive : ""}
+        data-name={"implant"}
+        onClick={(e) => toggleSidenavStatus(e)}
+      >
+        Имплантация
+        <ImplantSidenav isActive={sidenavActiveStatus.implant} />
+      </li>
       <li>Протезы на Имплантах</li>
       <li>Протезирование зубов</li>
       <li>Хирургия</li>

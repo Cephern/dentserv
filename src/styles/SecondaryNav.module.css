@@ -1,4 +1,4 @@
-.Sidebar .sidenav {
+.sidenav {
   visibility: hidden;
   position: absolute;
   top: 0;
@@ -6,18 +6,19 @@
   width: 340px;
   height: 100%;
   opacity: 0;
-  transition: 0.4s ease-in;
+  transition: 0.3s;
   z-index: -1;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 0;
 }
 
-.sidenav.active {
+.active {
   visibility: visible;
   opacity: 1;
-  margin-left: 340px;
+  left: 340px;
   color: #000;
   background-color: #eee;
 }
@@ -42,4 +43,9 @@
   background-color: #fff;
   color: #111;
   cursor: pointer;
+}
+
+.sidenav li.secondaryActive {
+  background-color: #fff;
+  color: #222;
 }

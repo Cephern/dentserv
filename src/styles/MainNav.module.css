@@ -4,9 +4,10 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 3;
 }
 
-.Sidebar .wrapper {
+.wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -16,13 +17,11 @@
 }
 
 .Sidebar ul {
-  padding: 0;
   list-style: none;
 }
 
 /* -logo- */
-
-.Sidebar .logo {
+.logo {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,7 +30,7 @@
   padding: 10px;
 }
 
-.Sidebar .logo img {
+.logo img {
   width: 60px;
   height: 60px;
   margin-right: 20px;
@@ -39,17 +38,17 @@
   border: 2px solid #eee;
 }
 
-.Sidebar .logo_text {
+.logoText {
   width: 140px;
   text-align: left;
 }
 
-.Sidebar .logo_text p {
+.logoText p {
   margin: 0;
   text-transform: uppercase;
 }
 
-.Sidebar .logo_text p.dim {
+.dim {
   color: var(--sidebar-dimmed-text-color);
   font-size: 12px;
 }
@@ -57,16 +56,16 @@
 /* --logo-- */
 
 /* -contacts- */
-.Sidebar .contacts {
+.contacts {
   text-align: center;
   font-size: 32px;
 }
 
-.Sidebar .contacts p {
+.contacts p {
   margin: 4px;
 }
 
-.Sidebar .contacts button {
+.contacts button {
   padding: 0.875rem 1.125rem;
   width: 280px;
   margin-top: 10px;
@@ -79,14 +78,18 @@
   text-shadow: 1px 1px 2px #000;
 }
 
-.Sidebar .contacts button:hover {
+.contacts button:hover {
   background: linear-gradient(180deg, #41b9f9, #0f94dc);
   border: 2px solid #41b9f9;
 }
 /* --contacts-- */
 
 /* -nav- */
-.Sidebar nav ul li p {
+.mainUl {
+  padding: 0;
+}
+
+.mainUl li p {
   padding: 10px 20px;
   margin: 0;
   font-size: 20px;
@@ -97,45 +100,47 @@
   line-height: 1.2;
 }
 
-.Sidebar nav ul li p.active {
+.mainUl li p.active {
   background-color: #222;
   color: #fff;
 }
 
-.Sidebar nav ul li:nth-child(1) {
+.mainUl li:nth-child(1) {
   border-top: 1px solid #fff;
 }
 
-.Sidebar nav ul li:last-child {
+.mainUl li:last-child {
   border-bottom: 1px solid #fff;
 }
 
-.Sidebar nav ul li p:hover {
+.mainUl li p:hover {
   background-color: #222;
   color: #fff;
 }
 
-.Sidebar nav ul .services p {
+.services p,
+.about p {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.Sidebar nav ul .services span {
+.mainUl p span {
   height: 100%;
   font-size: 20px;
   font-weight: 500;
-  transition: 0.4s;
+  transition: 0.3s;
   color: darkorange;
+  pointer-events: none;
 }
 
-.Sidebar nav ul .services p.active span {
+.mainUl p.active span {
   transform: rotateZ(45deg);
 }
 /* --nav-- */
 
 /* -promo- */
-.Sidebar .promo {
+.promo {
   box-sizing: border-box;
   width: 100%;
   padding: 4px 0;
@@ -147,21 +152,21 @@
   cursor: pointer;
 }
 
-.Sidebar .promo p {
+.promo p {
   margin: 0;
   filter: drop-shadow(0px 2px 4px #111);
 }
 
-.Sidebar .promo p:nth-child(1) {
+.promo p:nth-child(1) {
   font-size: 20px;
 }
 
-.Sidebar .promo p:nth-child(2) {
+.promo p:nth-child(2) {
   font-size: 16px;
   color: #efefef;
 }
 
-.Sidebar .promo img {
+.promo img {
   width: 80px;
   height: 80px;
   filter: drop-shadow(2px 2px 2px #111);
@@ -169,44 +174,44 @@
 /* --promo-- */
 
 /* -schedule- */
-.Sidebar .schedule {
+.schedule {
   padding: 6px 20px;
 }
 
-.Sidebar .schedule p {
+.schedule p {
   color: var(--sidebar-dimmed-text-color);
   margin-bottom: 4px;
 }
 
-.Sidebar .schedule span {
+.schedule span {
   display: block;
   font-size: 18px;
   letter-spacing: 1px;
 }
 
-.Sidebar .schedule div {
+.schedule div {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.Sidebar .schedule .days {
+.schedule .days {
   width: 80px;
 }
 
-.Sidebar .schedule .time {
+.schedule .time {
   width: 130px;
 }
 
 /* --schedule-- */
 
 /* -social- */
-.Sidebar .social {
+.social {
   padding: 10px;
   margin: 0 auto;
 }
 
-.Sidebar .social svg {
+.social svg {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -217,13 +222,13 @@
 /* --social-- */
 
 /* -interact- */
-.Sidebar .interact {
+.interact {
   padding: 10px;
   margin: 0 auto;
   box-shadow: -4px -4px 20px 2px #111;
 }
 
-.Sidebar .interact button {
+.interact button {
   padding: 14px 20px;
   margin: 6px 0;
   width: 100%;
@@ -239,7 +244,7 @@
   transition: all 0.2s ease-in;
 }
 
-.Sidebar .interact button:hover {
+.interact button:hover {
   background-color: #9ca8b3;
 }
 /* --interact-- */

@@ -22,5 +22,7 @@ body {
 
 main {
   height: 200vh;
+  width: calc(100vw - 357px);
   margin-left: 340px;
+  position: absolute;
 }
