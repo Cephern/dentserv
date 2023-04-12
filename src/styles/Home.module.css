@@ -1,0 +1,48 @@
+.introVideo {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+.introVideo video {
+  width: 100%;
+}
+
+.dimmer {
+  position: absolute;
+  bottom: 60px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 2;
+  font-size: 20px;
+}
+
+.dimmer button {
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #000;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #00c9ff 0%, #92fe9d 100%);
+  color: #000;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 8px 18px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.dimmer p,
+.dimmer h2 {
+  margin: 10px;
+}
+
+.lightBlue {
+  color: #01bfe6;
+}
