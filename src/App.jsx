@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Home from "./comps/pages/Home";
-import MainNav from "./comps/pages/main/sidebar/MainNav";
+import Home from "./comps/pages/home/Home";
+import MainNav from "./comps/sidebar/MainNav";
 import styles from "./styles/Dimmer.module.css";
 
 function App() {

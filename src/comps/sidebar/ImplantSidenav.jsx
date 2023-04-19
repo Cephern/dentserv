@@ -1,4 +1,4 @@
-import styles from "../../../../styles/SecondarySubNav.module.css";
+import styles from "../../styles/SecondarySubNav.module.css";
 
 function ImplantSidenav({ isActive }) {
   return (

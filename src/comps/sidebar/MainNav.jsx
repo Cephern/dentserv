@@ -1,7 +1,7 @@
-import styles from "../../../../styles/MainNav.module.css";
+import styles from "../../styles/MainNav.module.css";
 
-import MainLogo from "../../../../assets/logos/main.png";
-import PromoLogo from "../../../../assets/logos/promo.png";
+import MainLogo from "../../assets/logos/main.png";
+import PromoLogo from "../../assets/logos/promo.png";
 import ServicesSidenav from "./ServicesSidenav";
 import AboutSidenav from "./AboutSidenav";
 import { useEffect, useState } from "react";

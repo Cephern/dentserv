@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "../../../../styles/SecondaryNav.module.css";
+import styles from "../../styles/SecondaryNav.module.css";
 import ImplantSidenav from "./ImplantSidenav";
 
 const defaultSidenavStatus = {
