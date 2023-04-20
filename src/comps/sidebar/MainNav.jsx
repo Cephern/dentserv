@@ -56,7 +56,7 @@ const Sidebar = ({ toggleDimmer }) => {
         <div className={styles.logo}>
           <img src={MainLogo} alt="Logo" />
           <div className={styles.logoText}>
-            <p>Доктор Ливси</p>
+            <p>Дент Сервис</p>
             <p className={styles.dim}>Центр приватной стоматологии</p>
           </div>
         </div>
