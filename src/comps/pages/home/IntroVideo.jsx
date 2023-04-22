@@ -1,14 +1,19 @@
 import { useEffect, useRef, useState } from "react";
+import videoPoster from "../../../assets/videos/videoPoster.webp";
 import introVideo from "../../../assets/videos/intro.mp4";
 
 import styles from "../../../styles/homePage/introVideo.module.css";
 
 function IntroVideo() {
-  const [currentVideoPercent, setCurrentVideoPercent] = useState(20);
+  const [currentVideoPercent, setCurrentVideoPercent] = useState(0);
 
   const videoRef = useRef(null);
 
   useEffect(() => {
+    setTimeout(() => {
+      videoRef.current.play();
+    }, 200);
+
     const interval = setInterval(() => {
       setCurrentVideoPercent(
         Math.ceil(
@@ -23,8 +28,8 @@ function IntroVideo() {
   return (
     <div className={styles.introVideo}>
       <div className={styles.dimmer}>
+        <h2 className={styles.h2}>Дент Сервис</h2>
         <div className={styles.hero}>
-          <h2>Дент Сервис</h2>
           <p>
             Центр <span className={styles.lightBlue}>Приватной</span>{" "}
             Стоматологии <span className={styles.lightBlue}>№1</span>{" "}
@@ -46,7 +51,7 @@ function IntroVideo() {
         </div>
       </div>
 
-      <video ref={videoRef} autoPlay loop muted>
+      <video ref={videoRef} preload="none" poster={videoPoster} loop muted>
         <source src={introVideo} type="video/mp4" />
       </video>
     </div>

@@ -33,8 +33,9 @@ function Promos() {
     setTimeout(() => {
       if (currentPromo > 0) setCurrentPromo((prev) => prev - 1);
       if (currentPromo === 0) setCurrentPromo(promos.length - 1);
+
       setIsFading(false);
-    }, 400);
+    }, 300);
   };
 
   const handleRightArrowClick = () => {
@@ -44,7 +45,7 @@ function Promos() {
       if (currentPromo < promos.length - 1) setCurrentPromo((prev) => prev + 1);
       if (currentPromo === promos.length - 1) setCurrentPromo(0);
       setIsFading(false);
-    }, 400);
+    }, 300);
   };
 
   const handleManualChange = (id) => {
@@ -55,7 +56,7 @@ function Promos() {
     setTimeout(() => {
       setCurrentPromo(id);
       setIsFading(false);
-    }, 400);
+    }, 300);
   };
 
   useEffect(() => {
@@ -72,7 +73,7 @@ function Promos() {
             }
           });
           setIsFading(false);
-        }, 400);
+        }, 300);
       }, 3000);
     }
 
@@ -108,6 +109,15 @@ function Promos() {
             }}
           >
             <img src={promos[currentPromo].promoPhoto} alt="Promo1" />
+
+            {promos.map((promo) => (
+              <img
+                key={promo.id}
+                style={{ display: "none" }}
+                src={promo.promoPhoto}
+                alt="preload"
+              ></img>
+            ))}
 
             <div
               className={styles.promo_text}

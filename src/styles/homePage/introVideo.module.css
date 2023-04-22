@@ -32,17 +32,43 @@
   color: #01bfe6;
 }
 
-.hero {
+.h2 {
+  font-size: 100px;
+  font-weight: 400;
+  margin: 20px;
+  animation: h2 0.8s;
   position: absolute;
-  bottom: 10%;
+  bottom: 21%;
   left: 4%;
-  text-shadow: 2px 2px 2px #000;
 }
 
-.hero h2 {
-  font-size: 100px;
-  font-weight: normal;
-  margin: 20px;
+@keyframes h2 {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hero {
+  position: absolute;
+  bottom: -20%;
+  left: 4%;
+  text-shadow: 2px 2px 2px #000;
+  animation: hero 0.8s 0.2s forwards;
+}
+
+@keyframes hero {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    bottom: 10%;
+  }
 }
 
 .hero p {
@@ -93,6 +119,7 @@
   height: 6px;
   background-color: #fff;
   border-radius: 10px;
+  margin: 0 auto;
 }
 
 .progressBar {
@@ -100,6 +127,7 @@
   height: 100%;
   border-radius: 10px;
   background-color: #01bfe6;
+  margin: 0 auto; /* remove for linear fill */
 
   transition: width 0.423s linear;
 }
