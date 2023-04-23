@@ -7,6 +7,7 @@
   justify-content: center;
   background-color: #000;
   object-fit: cover;
+  overflow: hidden;
 }
 
 .introVideo video {

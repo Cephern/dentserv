@@ -10,57 +10,29 @@
 
 .slider {
   width: 100%;
-  overflow: hidden;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   position: relative;
+  overflow: hidden;
 }
 
 .content {
-  width: 1420px;
-  height: 820px;
+  height: 720px;
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 40px;
-}
+  gap: 80px;
 
-.content svg {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  transition: 0.6s;
-  fill: #555;
-}
-
-.left_arrow {
-  left: 10px;
-}
-
-.right_arrow {
-  right: 10px;
-}
-
-.content svg:hover {
-  fill: #000;
+  transition: all 0.3s;
 }
 
 .promo {
-  width: 100%;
+  flex-shrink: 0;
+  flex-basis: 70%;
   height: 100%;
-  opacity: 1;
-
-  transition: opacity 0.5s;
+  position: relative;
 }
 
-.promo.fading {
-  opacity: 0.05;
+.promo:first-child {
+  margin-left: 15%;
 }
 
 .promo img {
@@ -69,7 +41,7 @@
   border-radius: 20px;
 }
 
-.promo_text {
+.promoText {
   position: absolute;
   width: 520px;
   text-shadow: 1px 1px 1px #000;
@@ -83,26 +55,26 @@
   color: #fff;
 }
 
-.promo_text h3,
-.promo_text h4 {
+.promoText h3,
+.promoText h4 {
   margin: 0;
 }
 
-.promo_text h3 {
+.promoText h3 {
   font-size: 30px;
   margin-bottom: 20px;
 }
 
-.promo_text h4 {
+.promoText h4 {
   font-size: 24px;
 }
 
-.promo_text ul {
+.promoText ul {
   list-style-type: none;
   font-size: 18px;
 }
 
-.promo_text ul li::before {
+.promoText ul li::before {
   content: "\2713";
   color: darkgreen;
   font-weight: bold;
@@ -136,9 +108,10 @@
 }
 
 .counter {
+  position: absolute;
+  bottom: 40px;
   width: 70%;
   height: 14px;
-  margin-top: 20px;
   display: flex;
   gap: 20px;
 }
@@ -155,14 +128,25 @@
   background-color: #fff;
 }
 
-@keyframes fade {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.counter svg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: 0.6s;
+  fill: #555;
+}
+
+.counter svg:hover {
+  fill: #000;
+}
+
+.leftArrow {
+  left: -70px;
+}
+
+.rightArrow {
+  right: -70px;
 }
