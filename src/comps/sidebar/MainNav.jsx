@@ -18,6 +18,8 @@ const defaultStatus = {
 };
 
 const Sidebar = ({ toggleDimmer }) => {
+  // check width
+
   const [activeStatus, setActiveStatus] = useState(defaultStatus);
   const [isFirstToggle, setIsFirstToggle] = useState(true);
 
@@ -150,7 +152,6 @@ const Sidebar = ({ toggleDimmer }) => {
 
         <div className={styles.interact}>
           <button>Контакты и запись на приём</button>
-          <button>Служба контроля качества</button>
         </div>
       </div>
     </div>

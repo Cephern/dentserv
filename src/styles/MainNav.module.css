@@ -1,6 +1,6 @@
 .Sidebar {
   width: 340px;
-  height: 100%;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
@@ -8,6 +8,8 @@
 }
 
 .wrapper {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -223,9 +225,11 @@
 
 /* -interact- */
 .interact {
+  width: 100%;
   padding: 10px;
   margin: 0 auto;
   box-shadow: -4px -4px 20px 2px #111;
+  box-sizing: border-box;
 }
 
 .interact button {

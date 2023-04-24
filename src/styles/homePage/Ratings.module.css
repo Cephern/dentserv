@@ -1,0 +1,6 @@
+.Ratings {
+  background-color: bisque;
+  grid-area: ratings;
+  border-radius: 20px;
+  padding: 10px;
+}

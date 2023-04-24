@@ -1,0 +1,91 @@
+.Advantages {
+  display: flex;
+  grid-area: advantages;
+  background-color: #fff;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 20px;
+  position: relative;
+}
+
+.Advantages h3 {
+  position: absolute;
+  top: 10px;
+  left: 40px;
+  font-size: 30px;
+  margin: 0;
+}
+
+.text {
+  width: 40%;
+  margin: auto 0;
+}
+
+.text ul {
+  list-style-type: none;
+}
+
+.li {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px;
+  transition: all 0.4s;
+  overflow-wrap: break-word;
+  color: #777;
+}
+
+.active {
+  color: rgb(32, 160, 199);
+}
+
+.text button {
+  position: absolute;
+  bottom: 60px;
+  left: 40px;
+  padding: 14px 40px;
+  margin: 6px 0;
+  border-radius: 10px;
+  border: none;
+  background-color: #3b404b;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+
+  transition: all 0.2s ease-in;
+}
+
+.text button:hover {
+  color: orange;
+  background-color: #333;
+}
+
+.imgs {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgsWrapper {
+  width: 90%;
+  height: 80%;
+  position: relative;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: 4px 4px 4px 4px #000;
+  position: absolute;
+  opacity: 0;
+
+  transition: opacity 1s ease-in-out;
+}
+
+.imgActive {
+  opacity: 1;
+}
