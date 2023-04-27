@@ -11,21 +11,49 @@ import { useEffect, useRef, useState } from "react";
 const advantages = [
   {
     id: 0,
-    text: "Только современное оборудование и сертифицированные материалы",
+    text: {
+      first: "Только",
+      emphasis: "современное",
+      last: "оборудование и сертифицированные материалы",
+    },
     photo: img0,
   },
   {
     id: 1,
-    text: "Врачи с опытом от 5 лет, владеющие передовыми технологиями лечения",
+    text: {
+      first: "Врачи с",
+      emphasis: "опытом",
+      last: "от 5 лет, владеющие передовыми технологиями лечения",
+    },
     photo: img1,
   },
   {
     id: 2,
-    text: "Доступные и понятные цены на услуги, бонусы постоянным клиентам",
+    text: {
+      first: "",
+      emphasis: "Доступные и понятные",
+      last: "цены на услуги, бонусы постоянным клиентам",
+    },
     photo: img2,
   },
-  { id: 3, text: "Красивое расположение клиники", photo: img3 },
-  { id: 4, text: "Всегда довольные пациенты", photo: img4 },
+  {
+    id: 3,
+    text: {
+      first: "",
+      emphasis: "Красивое",
+      last: "расположение клиники",
+    },
+    photo: img3,
+  },
+  {
+    id: 4,
+    text: {
+      first: "Всегда",
+      emphasis: "довольные",
+      last: "пациенты",
+    },
+    photo: img4,
+  },
 ];
 
 function Advantages() {
@@ -44,36 +72,25 @@ function Advantages() {
 
   return (
     <div className={styles.Advantages}>
-      <h3>Преимущества нашей клиники</h3>
-      <div className={styles.text}>
-        <ul>
-          {advantages.map((li, index) => (
-            <li
-              key={li.id}
-              className={`${styles.li} ${
-                currentAdvantage === index ? styles.active : ""
-              }`}
-            >
-              {li.text}
-            </li>
-          ))}
-        </ul>
+      {advantages.map((advantage, index) => (
+        <img
+          src={advantage.photo}
+          alt={`Advantage Photo ${advantage.id}`}
+          key={advantage.id}
+          className={`${styles.img} ${
+            currentAdvantage === index ? styles.imgActive : ""
+          }`}
+        />
+      ))}
 
-        <button>Записаться на приём</button>
-      </div>
-
-      <div className={styles.imgs}>
-        <div className={styles.imgsWrapper}>
-          {advantages.map((advantage, index) => (
-            <img
-              src={advantage.photo}
-              alt={`Advantage Photo ${index}`}
-              className={`${styles.img} ${
-                currentAdvantage === index ? styles.imgActive : ""
-              }`}
-            />
-          ))}
-        </div>
+      <div className={styles.textBox}>
+        <p className={styles.text}>
+          {`${advantages[currentAdvantage].text.first}`}{" "}
+          <span
+            className={styles.emphasis}
+          >{`${advantages[currentAdvantage].text.emphasis}`}</span>{" "}
+          {`${advantages[currentAdvantage].text.last}`}
+        </p>
       </div>
     </div>
   );

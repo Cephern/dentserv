@@ -3,10 +3,12 @@
   height: 100vh;
   display: grid;
   padding: 40px;
-  grid-template-areas:
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  /* grid-template-areas:
     "advantages advantages ratings"
     "advantages advantages ratings"
-    "results results results";
+    "reviews reviews reviews"; */
   gap: 60px;
   box-sizing: border-box;
 }
