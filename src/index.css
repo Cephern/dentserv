@@ -7,6 +7,10 @@
   --sidebar-btn-color: #51555d;
 }
 
+html {
+  scroll-snap-type: y proximity;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -14,7 +18,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 17px;
+  width: 10px;
 }
 
 body::-webkit-scrollbar-track {
@@ -28,14 +32,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .App {
-  width: calc(100vw - 20px);
+  width: calc(100vw - 10px);
   height: 100vh;
   display: flex;
-  position: relative;
 }
 
 main {
-  width: calc(100vw - 357px);
+  width: calc(100vw - 350px);
   margin-left: 340px;
-  position: absolute;
 }

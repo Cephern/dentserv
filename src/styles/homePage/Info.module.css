@@ -11,4 +11,6 @@
     "reviews reviews reviews"; */
   gap: 60px;
   box-sizing: border-box;
+  scroll-snap-align: center;
+  scroll-snap-stop: normal;
 }

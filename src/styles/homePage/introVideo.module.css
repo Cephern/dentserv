@@ -8,6 +8,8 @@
   background-color: #000;
   object-fit: cover;
   overflow: hidden;
+  scroll-snap-align: center;
+  scroll-snap-stop: normal;
 }
 
 .introVideo video {

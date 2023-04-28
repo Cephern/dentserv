@@ -1,0 +1,89 @@
+.Doctors {
+  width: 100%;
+  height: 100vh;
+  background: url("../../assets/doctors/bg.png") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+
+  box-shadow: 2px -4px 20px 8px #000, 2px 4px 20px 8px #000;
+
+  scroll-snap-align: center;
+  scroll-snap-stop: normal;
+}
+
+.info {
+  width: 40%;
+  margin-left: 10%;
+  height: 60%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.name {
+  font-size: 4em;
+}
+
+.name p {
+  margin: 0;
+}
+
+.occupation {
+  font-size: 1.5em;
+  color: #aaa;
+  margin: 0 10px;
+}
+
+.exp {
+  font-size: 1.5em;
+  color: #aaa;
+  margin: 0 10px;
+}
+
+.specialisation {
+  width: 100%;
+  margin: 20% 0 20px;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.specialisationUl {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.specialisationUl li {
+  padding: 10px;
+  font-size: 1.3em;
+  color: #f4f4f4;
+  cursor: pointer;
+}
+
+.btn {
+  margin: 10% auto 0;
+  width: 60%;
+  color: #fff;
+  background-color: #000;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.imgWrapper {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.imgWrapper img {
+  height: 90%;
+  filter: drop-shadow(40px 10px 20px #000);
+}
