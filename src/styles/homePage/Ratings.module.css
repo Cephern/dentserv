@@ -1,32 +1,71 @@
 .Ratings {
-  grid-area: ratings;
-  grid-column: 3/4;
-  grid-row: 1/3;
-  border-radius: 20px;
-  padding: 10px;
-  margin: auto 0;
-  height: fit-content;
-
+  padding: 0 20px;
   display: grid;
   grid-template-areas:
-    "google google"
-    "pro zoon"
-    "yandex yandex";
-  gap: 40px;
-
+    "first first"
+    "second third"
+    "fourth fourth";
   align-items: center;
   justify-items: center;
+  gap: 20px;
 }
 
 .rating {
+  background-color: rgba(255, 255, 255, 0.95);
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+
+.rating:nth-child(1) {
+  grid-area: first;
+  width: 240px;
+}
+
+.rating:nth-child(2) {
+  grid-area: second;
+  width: 140px;
+}
+
+.rating:nth-child(2) p {
+  display: none;
+}
+
+.rating:nth-child(2) .ratings {
+  display: none;
+}
+
+.rating:nth-child(3) {
+  grid-area: third;
+  width: 140px;
+}
+
+.rating:nth-child(3) p {
+  display: none;
+}
+
+.rating:nth-child(3) .ratings {
+  display: none;
+}
+
+.rating:nth-child(4) {
+  grid-area: fourth;
+  width: 300px;
+}
+
+.rates {
+  height: 50%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.rating p span {
+.rates p span {
   color: rgb(32, 160, 199);
-  font-size: 1.4em;
+  font-size: 1em;
 }
 
 .stars {
@@ -38,41 +77,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  height: 30%;
 }
 
 .img {
-  width: 140px;
-}
-
-.googleRating {
-  background-color: rgba(255, 255, 255, 0.95);
-  width: 300px;
-  grid-area: google;
-  padding: 10px 20px;
-  border-radius: 10px;
-}
-
-.proRating {
-  grid-area: pro;
-  background-color: rgba(255, 255, 255, 0.95);
-  width: 150px;
-  padding: 10px 20px;
-  border-radius: 10px;
-}
-
-.zoonRating {
-  grid-area: zoon;
-  background-color: rgba(255, 255, 255, 0.95);
-  width: 150px;
-  padding: 10px 20px;
-  border-radius: 10px;
-}
-
-.yandexRating {
-  grid-area: yandex;
-  background-color: rgba(255, 255, 255, 0.95);
-  width: 300px;
-  padding: 10px 20px;
-  border-radius: 10px;
+  width: 100px;
 }

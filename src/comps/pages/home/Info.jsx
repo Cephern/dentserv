@@ -1,14 +1,16 @@
 import styles from "../../../styles/homePage/Info.module.css";
-import Advantages from "./Advantages";
+import ClinicImgGallery from "./ClinicImgGallery";
 import Ratings from "./Ratings";
 import Reviews from "./Reviews";
 
 function Info() {
   return (
     <div className={styles.Info}>
-      <Advantages />
-      <Ratings />
-      <Reviews />
+      <ClinicImgGallery />
+      <div className={styles.wrapper}>
+        <Reviews />
+        <Ratings />
+      </div>
     </div>
   );
 }

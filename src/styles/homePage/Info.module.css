@@ -1,16 +1,14 @@
 .Info {
   width: 100%;
   height: 100vh;
-  display: grid;
-  padding: 40px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  /* grid-template-areas:
-    "advantages advantages ratings"
-    "advantages advantages ratings"
-    "reviews reviews reviews"; */
-  gap: 60px;
   box-sizing: border-box;
   scroll-snap-align: center;
-  scroll-snap-stop: normal;
+}
+
+.wrapper {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
