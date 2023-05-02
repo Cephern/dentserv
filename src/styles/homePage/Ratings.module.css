@@ -1,5 +1,5 @@
 .Ratings {
-  padding: 0 20px;
+  padding: 0 80px;
   display: grid;
   grid-template-areas:
     "first first"
@@ -14,7 +14,7 @@
   background-color: rgba(255, 255, 255, 0.95);
   height: 60px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
   padding: 10px 14px;
   border-radius: 10px;
@@ -27,57 +27,54 @@
 
 .rating:nth-child(2) {
   grid-area: second;
-  width: 140px;
+  width: 100px;
 }
 
-.rating:nth-child(2) p {
+.rating:nth-child(2) .rates {
   display: none;
-}
-
-.rating:nth-child(2) .ratings {
-  display: none;
+  margin-left: 0;
 }
 
 .rating:nth-child(3) {
   grid-area: third;
-  width: 140px;
+  width: 100px;
 }
 
-.rating:nth-child(3) p {
+.rating:nth-child(3) .rates {
   display: none;
-}
-
-.rating:nth-child(3) .ratings {
-  display: none;
+  margin-left: 0;
 }
 
 .rating:nth-child(4) {
   grid-area: fourth;
-  width: 300px;
+  width: 240px;
 }
 
 .rates {
-  height: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  margin-left: 40px;
 }
 
 .rates p span {
   color: rgb(32, 160, 199);
-  font-size: 1em;
+  font-size: 1.2em;
 }
 
 .stars {
-  width: 140px;
+  width: 80px;
   text-align: center;
+}
+
+.stars img {
+  width: 16px;
+  height: 16px;
 }
 
 .logo {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  height: 30%;
+  justify-content: center;
+  height: 100%;
 }
 
 .img {

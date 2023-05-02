@@ -38,16 +38,16 @@ function Ratings() {
     <div className={styles.Ratings}>
       {ratings.map((rating) => (
         <div key={rating.id} className={styles.rating}>
-          <div className={styles.rates}>
+          <div className={styles.logo}>
             <Stars starsCount={rating.rating} />
+            <img className={styles.img} src={rating.logo} alt="Google Logo" />
+          </div>
+
+          <div className={styles.rates}>
             <p>
               <span>{rating.rating}</span> из 5
             </p>
-          </div>
-
-          <div className={styles.logo}>
-            <img className={styles.img} src={rating.logo} alt="Google Logo" />
-            <span className={styles.ratings}>44 отзыва</span>
+            <p className={styles.ratings}>44 отзыва</p>
           </div>
         </div>
       ))}

@@ -12,58 +12,88 @@ import img9 from "../../../assets/clinicImgs/img9.jpg";
 import img10 from "../../../assets/clinicImgs/img10.jpg";
 import img11 from "../../../assets/clinicImgs/img11.jpg";
 import img12 from "../../../assets/clinicImgs/img12.jpg";
+import { useState } from "react";
 
-function ClinicImgGallery() {
+const imgs = [
+  {
+    id: 0,
+    img: img1,
+    style: "wide",
+  },
+  {
+    id: 1,
+    img: img2,
+    style: "tall",
+  },
+  {
+    id: 2,
+    img: img3,
+    style: "",
+  },
+  {
+    id: 3,
+    img: img4,
+    style: "",
+  },
+  {
+    id: 4,
+    img: img5,
+    style: "tall",
+  },
+  {
+    id: 5,
+    img: img6,
+    style: "wide",
+  },
+  {
+    id: 6,
+    img: img7,
+    style: "",
+  },
+  {
+    id: 7,
+    img: img8,
+    style: "",
+  },
+  {
+    id: 8,
+    img: img9,
+    style: "tall",
+  },
+  {
+    id: 9,
+    img: img10,
+    style: "",
+  },
+  {
+    id: 10,
+    img: img11,
+    style: "",
+  },
+  {
+    id: 11,
+    img: img12,
+    style: "wide",
+  },
+];
+
+function ClinicImgGallery({ handleClick, handleClose }) {
   return (
     <div className={styles.ClinicImgGallery}>
       <div className={styles.gallery}>
-        <div className={`${styles.imgHolder} ${styles.wide}`}>
-          <img src={img1} alt="1" className={styles.img} />
-        </div>
-
-        <div className={`${styles.imgHolder} ${styles.tall}`}>
-          <img src={img2} alt="2" className={styles.img} />
-        </div>
-
-        <div className={styles.imgHolder}>
-          <img src={img3} alt="3" className={styles.img} />
-        </div>
-
-        <div className={styles.imgHolder}>
-          <img src={img4} alt="4" className={styles.img} />
-        </div>
-
-        <div className={`${styles.imgHolder} ${styles.tall}`}>
-          <img src={img5} alt="5" className={styles.img} />
-        </div>
-
-        <div className={`${styles.imgHolder} ${styles.wide}`}>
-          <img src={img6} alt="6" className={styles.img} />
-        </div>
-
-        <div className={styles.imgHolder}>
-          <img src={img7} alt="7" className={styles.img} />
-        </div>
-
-        <div className={styles.imgHolder}>
-          <img src={img8} alt="8" className={styles.img} />
-        </div>
-
-        <div className={`${styles.imgHolder} ${styles.tall}`}>
-          <img src={img9} alt="9" className={styles.img} />
-        </div>
-
-        <div className={styles.imgHolder}>
-          <img src={img10} alt="10" className={styles.img} />
-        </div>
-
-        <div className={styles.imgHolder}>
-          <img src={img11} alt="11" className={styles.img} />
-        </div>
-
-        <div className={`${styles.imgHolder} ${styles.wide} `}>
-          <img src={img12} alt="12" className={styles.img} />
-        </div>
+        {imgs.map(({ id, style, img }) => (
+          <div
+            key={id}
+            className={`${styles.imgHolder} ${styles[style]}`}
+            onClick={() => handleClick(img)}
+          >
+            <img
+              src={img}
+              className={styles.img}
+              alt={`Clinic image ${id + 1}`}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
