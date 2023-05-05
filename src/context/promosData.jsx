@@ -59,7 +59,7 @@ const data = [
     promoText: {
       h4: "Приводите одного ребенка, на второго посмотрим бесплатно",
       ul: ["Очень любим детей", "Прям невероятно"],
-      position: ["2%", null, null, "2%"], // top, right, bottom, left
+      position: [null, null, "2%", "2%"], // top, right, bottom, left
     },
   },
 ];

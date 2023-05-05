@@ -1,5 +1,6 @@
 .Ratings {
-  padding: 0 80px;
+  /* padding: 0 80px; */
+  margin-right: 40px;
   display: grid;
   grid-template-areas:
     "first first"

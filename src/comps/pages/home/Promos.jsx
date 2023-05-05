@@ -26,28 +26,55 @@ function Promos() {
   const [currentPromo, setCurrentPromo] = useState(0);
   const [autoScroll, setAutoScroll] = useState(true);
   const [offset, setOffset] = useState(0);
+  const [autoScrollInterval, setAutoScrollInterval] = useState(null);
 
   const contentRef = useRef(null);
 
+  const setupAutoScroll = () => {
+    const interval = setInterval(() => {
+      setTimeout(() => {
+        setCurrentPromo((prev) => {
+          if (prev === promos.length - 1) {
+            return 0;
+          } else {
+            return prev + 1;
+          }
+        });
+      }, 300);
+    }, 3000);
+
+    setAutoScrollInterval(interval);
+  };
+
   useEffect(() => {
     window.addEventListener("load", () => {
-      setOffset(
-        contentRef.current.children[0].getBoundingClientRect().width + 80
-      );
+      if (contentRef.current.children[0].children[0].complete) {
+        setOffset(
+          contentRef.current.children[0].getBoundingClientRect().width + 80
+        );
+        setupAutoScroll();
+      } else {
+        contentRef.current.children[0].children[0].addEventListener(
+          "load",
+          () => {
+            setOffset(
+              contentRef.current.children[0].getBoundingClientRect().width + 80
+            );
+            setupAutoScroll();
+          }
+        );
+      }
     });
+
     window.addEventListener("resize", () => {
       setOffset(contentRef.current.children[0].clientWidth + 80);
     });
 
     return () => {
+      clearInterval(autoScrollInterval);
+
       window.removeEventListener("resize", () => {
         setOffset(contentRef.current.children[0].clientWidth + 80);
-      });
-
-      window.removeEventListener("load", () => {
-        setOffset(
-          contentRef.current.children[0].getBoundingClientRect().width + 80
-        );
       });
     };
   }, []);
@@ -78,22 +105,10 @@ function Promos() {
   };
 
   useEffect(() => {
-    let interval;
-    if (autoScroll) {
-      interval = setInterval(() => {
-        setTimeout(() => {
-          setCurrentPromo((prev) => {
-            if (prev === promos.length - 1) {
-              return 0;
-            } else {
-              return prev + 1;
-            }
-          });
-        }, 300);
-      }, 3000);
+    if (!autoScroll) {
+      clearInterval(autoScrollInterval);
+      console.log("cleared");
     }
-
-    return () => clearInterval(interval);
   }, [autoScroll]);
 
   return (

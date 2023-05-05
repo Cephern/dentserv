@@ -7,9 +7,9 @@
   --sidebar-btn-color: #51555d;
 }
 
-html {
+/* html {
   scroll-snap-type: y proximity;
-}
+ }  */
 
 body {
   margin: 0;

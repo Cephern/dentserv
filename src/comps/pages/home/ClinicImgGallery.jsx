@@ -17,12 +17,12 @@ import { useState } from "react";
 const imgs = [
   {
     id: 0,
-    img: img1,
+    img: img2,
     style: "wide",
   },
   {
     id: 1,
-    img: img2,
+    img: img1,
     style: "tall",
   },
   {
@@ -47,7 +47,7 @@ const imgs = [
   },
   {
     id: 6,
-    img: img7,
+    img: img9,
     style: "",
   },
   {
@@ -57,7 +57,7 @@ const imgs = [
   },
   {
     id: 8,
-    img: img9,
+    img: img11,
     style: "tall",
   },
   {
@@ -67,17 +67,17 @@ const imgs = [
   },
   {
     id: 10,
-    img: img11,
+    img: img12,
     style: "",
   },
   {
     id: 11,
-    img: img12,
+    img: img7,
     style: "wide",
   },
 ];
 
-function ClinicImgGallery({ handleClick, handleClose }) {
+function ClinicImgGallery({ handleClick }) {
   return (
     <div className={styles.ClinicImgGallery}>
       <div className={styles.gallery}>

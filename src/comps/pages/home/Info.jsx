@@ -31,7 +31,7 @@ function Info() {
           x
         </span>
       </div>
-      <ClinicImgGallery handleClick={handleClick} handleClose={handleClose} />
+      <ClinicImgGallery handleClick={handleClick} />
       <div className={styles.wrapper}>
         <Reviews />
         <Ratings />
