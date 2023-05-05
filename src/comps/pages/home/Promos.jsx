@@ -47,24 +47,24 @@ function Promos() {
   };
 
   useEffect(() => {
-    window.addEventListener("load", () => {
-      if (contentRef.current.children[0].children[0].complete) {
-        setOffset(
-          contentRef.current.children[0].getBoundingClientRect().width + 80
-        );
-        setupAutoScroll();
-      } else {
-        contentRef.current.children[0].children[0].addEventListener(
-          "load",
-          () => {
-            setOffset(
-              contentRef.current.children[0].getBoundingClientRect().width + 80
-            );
-            setupAutoScroll();
-          }
-        );
-      }
-    });
+    if (contentRef.current.children[0].children[0].complete) {
+      setOffset(
+        contentRef.current.children[0].getBoundingClientRect().width + 80
+      );
+      setupAutoScroll();
+      console.log("completed");
+    } else {
+      contentRef.current.children[0].children[0].addEventListener(
+        "load",
+        () => {
+          setOffset(
+            contentRef.current.children[0].getBoundingClientRect().width + 80
+          );
+          setupAutoScroll();
+          console.log("loaded");
+        }
+      );
+    }
 
     window.addEventListener("resize", () => {
       setOffset(contentRef.current.children[0].clientWidth + 80);

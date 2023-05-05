@@ -87,3 +87,67 @@
   height: 90%;
   filter: drop-shadow(40px 10px 20px #000);
 }
+
+@media screen and (max-width: 1500px) {
+  .name {
+    font-size: 2em;
+  }
+
+  .occupation {
+    font-size: 1.3em;
+    color: #aaa;
+    margin: 0 10px;
+  }
+
+  .exp {
+    font-size: 1.3em;
+    color: #aaa;
+    margin: 0 10px;
+  }
+
+  .specialisation {
+    width: 100%;
+    margin: 20% 0 20px;
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .specialisationUl li {
+    padding: 10px;
+    font-size: 1.1em;
+    color: #f4f4f4;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .name {
+    font-size: 2em;
+  }
+
+  .occupation {
+    font-size: 1.3em;
+    color: #aaa;
+    margin: 0 10px;
+  }
+
+  .exp {
+    font-size: 1.3em;
+    color: #aaa;
+    margin: 0 10px;
+  }
+
+  .specialisation {
+    width: 100%;
+    margin: 20% 0 20px;
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .specialisationUl li {
+    padding: 10px;
+    font-size: 1.1em;
+    color: #f4f4f4;
+    cursor: pointer;
+  }
+}
